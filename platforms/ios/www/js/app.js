@@ -9,7 +9,7 @@ angular.module('scanner', [
   'ionic','ionic.service.core',
   'ngCordova',
   'ionic.service.push',
-  'ionic.service.deploy',
+  'ionic.service.deploy','jett.ionic.filter.bar',
   'scanner.controllers'
 ])
 
@@ -27,7 +27,7 @@ angular.module('scanner', [
   // Identify app
   $ionicAppProvider.identify({
     // The App ID (from apps.ionic.io) for the server
-    app_id: '087d1c5b',
+    app_id: '9aae34e0',
     // The public API key all services will use for this app
     api_key: 'e8620df0f7fc91b18ce05c89123c3dbecc52a8e44903664e',
     // The GCM project ID (project number) from your Google Developer Console (un-comment if used)

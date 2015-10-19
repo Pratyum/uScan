@@ -1,6 +1,6 @@
 angular.module('scanner.controllers', ['ionic','jett.ionic.filter.bar'])
 
-  .controller('HomeController', function($scope, $rootScope, $cordovaBarcodeScanner, $ionicPlatform,$http) {
+  .controller('HomeController', function($scope, $rootScope, $cordovaBarcodeScanner, $ionicPlatform,$http, $timeout) {
         var vm = this;
         vm.scanResults = '';
         vm.succeedClass = 'Normal';
@@ -37,12 +37,17 @@ angular.module('scanner.controllers', ['ionic','jett.ionic.filter.bar'])
                     .scan()
                     .then(function(result) {
                         // Success! Barcode data is here
-                        $http.get("http://172.21.147.177:8000/register/"+eventName+"/"+result.text).then(function(resp) {
+                        $http.get("http://172.21.147.177:8000/register/"+eventName+"/"+(result.text+Math.floor(Math.random() * 10000) + 1) ).then(function(resp) {
                             if (resp.data.indexOf('New')>=0) {
                                 vm.scanResults = "Added "+result.text+" successfully! Please Proceed!";
                                 vm.succeedClass = "Green";
+                                if(!result.cancelled) {
+                                    $timeout(function () {
+                                        vm.scan();
+                                    }, 300);
+                                }
                             }
-                            else if(resp.data == "This matric is already registered for this event"){
+                            else if(resp.data.indexOf('already')>=0){
                                 vm.scanResults = "Sorry "+result.text+" Registered";
                                 vm.succeedClass = "Red";    
                             }

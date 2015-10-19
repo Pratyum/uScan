@@ -1,4 +1,4 @@
-angular.module('scanner.controllers', ['ionic'])
+angular.module('scanner.controllers', ['ionic','jett.ionic.filter.bar'])
 
   .controller('HomeController', function($scope, $rootScope, $cordovaBarcodeScanner, $ionicPlatform,$http) {
         var vm = this;
