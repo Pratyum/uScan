@@ -71,3 +71,22 @@ gulp.task('remove-proxy', function() {
     silent: false,
   });
 });
+gulp.task('add-proxy', function() {
+  return replace({
+    regex: "http://172.21.147.177:8000/check/event1",
+    replacement: "http://localhost:8100/check/event1",
+    paths: replaceFiles,
+    recursive: false,
+    silent: false,
+  });
+});
+
+gulp.task('remove-proxy', function() {
+  return replace({
+    regex: "http://localhost:8100/check/event1",
+    replacement: "http://172.21.147.177:8000/check/event1",
+    paths: replaceFiles,
+    recursive: false,
+    silent: false,
+  });
+});

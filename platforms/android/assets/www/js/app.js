@@ -22,6 +22,14 @@ angular.module('scanner', [
 .constant('Register', {
   url: 'http://172.21.147.177:8000/register/'
 })
+.constant('Check', {
+  url: 'http://localhost:8100/check/'
+})
+.service('eventName', function() {
+      this.eventName = "";
+      this.eventCode = "";
+
+})
 
 .config(['$ionicAppProvider', function($ionicAppProvider) {
   // Identify app

@@ -9,6 +9,10 @@
     {
       "path": "/register",
       "proxyUrl": "http://172.21.147.177:8000/register"
+    },
+    {
+      "path": "/check",
+      "proxyUrl": "http://172.21.147.177:8000/check/event1"
     }
   ]
 }
