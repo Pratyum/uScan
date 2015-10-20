@@ -2,6 +2,15 @@
     <ion-content style="background: #e8ebf1;" class="padding">
         <div class="card">
             <div class="item">
+                <center><p ng-class="isInEvent">{{eventName.eventName}}</p></center>
+                <button class="button button-block button-positive" ng-click="openModal()">
+                    {{eventMessage}} &nbsp;
+                    <i class="icon ion-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="item">
                 <button class="button button-block button-positive" ng-click="vm.scan()">
                     <i class="icon ion-qr-scanner"></i>
                     Scan Now
@@ -28,3 +37,25 @@
         </div>
     </ion-content>
 </ion-view>
+
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Event Details</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list list-inset">
+          <label class="item item-input item-stacked-label no-top-border">
+          <span class="input-label white-color">Event Name</span>
+          <input type="text" placeholder="Event name" ng-model="eventName.eventName">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label white-color">Event code</span>
+          <input type="password" placeholder="Event Code" ng-model="eventName.eventCode">
+        </label>  
+      </div>
+      <button class="button button-block button-calm" ng-click="login()">Login</button>
+      <p ng-class="isInValid">{{message}}</p>
+    </ion-content>
+  </ion-modal-view>
+</script>

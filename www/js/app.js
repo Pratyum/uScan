@@ -25,6 +25,9 @@ angular.module('scanner', [
 .constant('Check', {
   url: 'http://localhost:8100/check/'
 })
+.constant('RealCheck',{
+  url:'172.21.147.177:8000/check/'
+})
 .service('eventName', function() {
       this.eventName = "";
       this.eventCode = "";
@@ -80,11 +83,11 @@ angular.module('scanner', [
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('login', {
-    url: "/login",
-    templateUrl: "templates/login.html",
-    controller:"LoginCtrl"
-  })
+  //   .state('login', {
+  //   url: "/login",
+  //   templateUrl: "templates/login.html",
+  //   controller:"LoginCtrl"
+  // })
     .state('tab', {
     url: "/tab",
     abstract: true,
@@ -115,6 +118,6 @@ angular.module('scanner', [
   });
 ////////////
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/tab/home');
 
 });
