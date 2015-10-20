@@ -105,7 +105,7 @@ angular.module('scanner.controllers', ['ionic'])
                     .then(function(result) {
                         // Success! Barcode data is here
                         if(result.text.length==9 && result.text.indexOf('U')==0){
-                          $http.get("http://172.21.147.177:8000/register/"+eventName.eventCode+"/"+(result.text+Math.floor(Math.random() * 10000) + 1) ).then(function(resp) {
+                          $http.get("http://172.21.147.177:8000/register/"+eventName.eventCode+"/"+(result.text) ).then(function(resp) {
                               if (resp.data.indexOf('New')>=0) {
                                   vm.scanResults = "Added "+result.text+" successfully! Please Proceed!";
                                   vm.succeedClass = "Green";
