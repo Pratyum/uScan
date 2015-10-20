@@ -43,15 +43,12 @@ angular.module('scanner.controllers', ['ionic'])
             $scope.message ="Null Values Present"  
           }else{
             $http.get("http://172.21.147.177:8000/check/"+$scope.eventName.eventCode).then(function(resp){
-              if(resp.data == $scope.eventName.eventName){
+                $scope.eventName.eventName = resp.data;
+                eventName.eventName = resp.data;
                 $scope.isInValid ="Green";
                 $scope.message="Congrats!It works!";
                 $scope.eventMessage ="Change event!";
                 $scope.closeModal();
-              }else{
-                $scope.isInValid = "Red";
-                $scope.message ="Wrong Password Combination";
-              }
             },function(err){
                 console.log(err);
                 $scope.isInValid = "Orange";
