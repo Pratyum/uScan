@@ -9,25 +9,15 @@
                 </button>
             </div>
         </div>
-        <div class="card">
+        <div class="card" ng-show="isScan == true">
             <div class="item">
                 <button class="button button-block button-positive" ng-click="vm.scan()">
                     <i class="icon ion-qr-scanner"></i>
                     Scan Now
                 </button>
-                <div class= "card">
-                    <label class="item item-input item-stacked-label no-top-border">
-                      <span class="input-label white-color">Matric Number</span>
-                      <input type="text" placeholder="U1422974A" ng-model="app.matric">
-                    </label>
-                    <button class="button button-block button-positive" ng-click="getManual() ">
-                        <i class="ion-plus-circled"></i>
-                        Add Manually! 
-                    </button>
-                </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card" ng-show="isScan == true">
             <div class="item item-divider">
                 Scan Results
             </div>
@@ -35,6 +25,17 @@
                 {{vm.scanResults}}
             </div>
         </div>
+        <div class= "card" ng-show ="isScan == true">
+            <label class="item item-input item-stacked-label no-top-border">
+              <span class="input-label white-color">Matric Number</span>
+              <input type="text" placeholder="U1422974A" ng-model="app.matric">
+            </label>
+            <button class="button button-block button-positive" ng-click="getManual() ">
+                <i class="ion-plus-circled"></i>
+                Add Manually! 
+            </button>
+        </div>
+
     </ion-content>
 </ion-view>
 

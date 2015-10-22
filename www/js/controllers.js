@@ -4,6 +4,7 @@ angular.module('scanner.controllers', ['ionic'])
         var vm = this;
         vm.scanResults = '';
         vm.succeedClass = 'Normal';
+        $scope.isScan = false
         $scope.app={};
         $scope.isInEvent ="White";
         $scope.eventMessage="Login to event!";
@@ -40,7 +41,8 @@ angular.module('scanner.controllers', ['ionic'])
         $scope.login = function(){
           if($scope.eventName.eventCode== null || $scope.eventName.eventName == null){
             $scope.isInValid = "Black";
-            $scope.message ="Null Values Present"  
+            $scope.message ="Null Values Present";
+            $scope.isScan =false;
           }else{
             $http.get("http://172.21.147.177:8000/check/"+$scope.eventName.eventCode).then(function(resp){
                 if(resp.data.indexOf('false')== -1){
@@ -49,16 +51,19 @@ angular.module('scanner.controllers', ['ionic'])
                 $scope.isInValid ="Green";
                 $scope.message="Congrats!It works!";
                 $scope.eventMessage ="Change event!";
+                $scope.isScan = true;
                 $scope.closeModal();
               }
               else{
                 $scope.message="This Event does not Exist!"
                 $scope.isInValid="Red";
+                $scope.isScan =false;
               }
             },function(err){
                 console.log(err);
                 $scope.isInValid = "Orange";
                 $scope.message = err;
+                $scope.isScan =false;
             });
           }
         };
@@ -67,7 +72,7 @@ angular.module('scanner.controllers', ['ionic'])
 
         $scope.getManual = function() {
           if($scope.eventName.eventCode.length>0){
-          if($scope.app.matric.length==9 && $scope.app.matric.indexOf('U')==0){
+          if($scope.app.matric.length==9 && $scope.app.matric.indexOf('U')==0 && $scope.isScan ==true ){
               $http.get("http://172.21.147.177:8000/register/"+eventName.eventCode+"/"+$scope.app.matric).then(function(resp) {
                 if (resp.data.indexOf('New')>=0){
                     vm.scanResults = "Added "+$scope.app.matric+" successfully! Please Proceed!";
@@ -104,7 +109,7 @@ angular.module('scanner.controllers', ['ionic'])
                     .scan()
                     .then(function(result) {
                         // Success! Barcode data is here
-                        if(result.text.length==9 && result.text.indexOf('U')==0){
+                        if(result.text.length==9 && result.text.indexOf('U')==0 && $scope.isScan == true ){
                           $http.get("http://172.21.147.177:8000/register/"+eventName.eventCode+"/"+(result.text) ).then(function(resp) {
                               if (resp.data.indexOf('New')>=0) {
                                   vm.scanResults = "Added "+result.text+" successfully! Please Proceed!";
