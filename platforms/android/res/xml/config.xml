@@ -22,12 +22,12 @@
     <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
     <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
     <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
-    <name>ion-scanner</name>
+    <name>U-Scan</name>
     <description>
-        An Ionic Framework and Cordova project.
+        Mobile Scanner
     </description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+    <author email="su-ie@e.ntu.edu.sg" href="http://su.ntu.edu.sg/">
+      NTUSU Information Technology Committee
     </author>
     <content src="index.html" />
     <access origin="*" />

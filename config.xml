@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.ionscanner230624" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>ion-scanner</name>
+  <name>U-Scan</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Mobile Scanner
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="su-ie@e.ntu.edu.sg" href="http://su.ntu.edu.sg/">
+      NTUSU Information Technology Committee
     </author>
   <content src="index.html"/>
   <access origin="*"/>

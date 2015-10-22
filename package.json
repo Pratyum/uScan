@@ -1,5 +1,5 @@
 {
-  "name": "ion-scanner",
+  "name": "uscan",
   "version": "1.0.0",
   "description": "ion-scanner: An Ionic project",
   "dependencies": {
@@ -21,6 +21,6 @@
     "com.ionic.keyboard"
   ],
   "cordovaPlatforms": [
-    "ios"
+    "android"
   ]
 }
