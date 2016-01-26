@@ -1,18 +1,4 @@
 {
   "name": "uScan",
-  "app_id": "9aae34e0",
-  "proxies": [
-    {
-      "path": "/list",
-      "proxyUrl": "http://172.21.147.177:8000/list/event1"
-    },
-    {
-      "path": "/register",
-      "proxyUrl": "http://172.21.147.177:8000/register"
-    },
-    {
-      "path": "/check",
-      "proxyUrl": "http://172.21.147.177:8000/check/event1"
-    }
-  ]
+  "app_id": ""
 }

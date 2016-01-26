@@ -1,0 +1,23 @@
+<ion-view view-title="Login" name="login-view" >
+  <ion-content class="padding">
+      <div class="list list-inset">
+          <label>
+           <center><img class="center responsive" ng-src="img/logo01.png"/></center> 
+          </label>
+          <!-- <label class="item item-input">
+              <input type="text" placeholder="Username" ng-model="data.username">
+          </label> -->
+          <label class="item item-input item-stacked-label no-top-border">
+          <span class="input-label white-color">Event Name</span>
+          <input type="text" placeholder="Event name" ng-model="eventName.eventName">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label white-color">Event code</span>
+          <input type="password" placeholder="Event Code" ng-model="eventName.eventCode">
+        </label>
+        
+      </div>
+      <button class="button button-block button-calm" ng-click="login()">Login</button>
+      <p ng-class="isInValid">{{message}}</p>
+  </ion-content>
+</ion-view>

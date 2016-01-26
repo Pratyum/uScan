@@ -1,25 +1,25 @@
 /* Empty. Add your own CSS if you like */
 .responsive{
-	width: 100%;
-	height: auto;
-	max-width: 500px;
+  width: 100%;
+  height: auto;
+  max-width: 500px;
 }
 .Normal {
 }
 .Red{
-	color: #FF0000;
+  color: #FF0000;
 }
 
 .Green{
-	color: #00FF00;
+  color: #00FF00;
 }
 .Orange{
-	color: #FF6600;
+  color: #FF6600;
 }
 .White{
-	color: #FFFFFF;
+  color: #FFFFFF;
 }
 .Black{
-	color: #000000;
+  color: #000000;
 }
 

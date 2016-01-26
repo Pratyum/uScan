@@ -9,6 +9,30 @@
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"CsZBar\"><param name=\"android-package\" value=\"org.cloudsky.cordovaPlugins.ZBar\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"BarcodeScanner\"><param name=\"android-package\" value=\"com.phonegap.plugins.barcodescanner.BarcodeScanner\" /></feature>",
                             "count": 1
                         }
@@ -17,6 +41,34 @@
             },
             "AndroidManifest.xml": {
                 "parents": {
+                    "application": [
+                        {
+                            "xml": "<activity android:name=\"org.cloudsky.cordovaPlugins.ZBarScannerActivity\" android:screenOrientation=\"portrait\" android:theme=\"@android:style/Theme.Black.NoTitleBar.Fullscreen\"></activity>",
+                            "count": 1
+                        }
+                    ],
+                    "/*": [
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.camera\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.camera.autofocus\" android:required=\"false\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.camera.flash\" android:required=\"false\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.camera.front\" android:required=\"false\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
+                            "count": 1
+                        }
+                    ],
                     "/manifest/application": [
                         {
                             "xml": "<activity android:clearTaskOnLaunch=\"true\" android:configChanges=\"orientation|keyboardHidden\" android:exported=\"false\" android:name=\"com.google.zxing.client.android.CaptureActivity\" android:theme=\"@android:style/Theme.NoTitleBar.Fullscreen\" android:windowSoftInputMode=\"stateAlwaysHidden\"><intent-filter><action android:name=\"com.google.zxing.client.android.SCAN\" /><category android:name=\"android.intent.category.DEFAULT\" /></intent-filter></activity>",
@@ -39,16 +91,34 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.FLASHLIGHT\" />",
                             "count": 1
-                        },
-                        {
-                            "xml": "<uses-feature android:name=\"android.hardware.camera\" android:required=\"false\" />",
-                            "count": 1
                         }
                     ]
                 }
             },
             "res/values/strings.xml": {
                 "parents": {
+                    "/*": [
+                        {
+                            "xml": "<string name=\"csZbarScannerTitle\">Scan QR Code</string>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<string name=\"csZbarScannerInstructions\">Please point your camera at the QR code.</string>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<color name=\"csZbarScannerTextColor\">#ffffff</color>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<color name=\"csZbarScannerTextBackground\">#88000000</color>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<color name=\"csZbarScannerBackground\">#000000</color>",
+                            "count": 1
+                        }
+                    ],
                     "/resources": [
                         {
                             "xml": "<string name=\"app_picker_name\">Applications</string>",
@@ -532,8 +602,32 @@
         }
     },
     "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.ionscanner230624uscan"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.ionscanner230624uscan"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.ionscanner230624uscan"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.ionscanner230624uscan"
+        },
+        "cordova-plugin-transport-security": {
+            "PACKAGE_NAME": "com.ionicframework.ionscanner230624uscan"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.ionscanner230624uscan"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.ionscanner230624uscan"
+        },
+        "org.cloudsky.cordovaplugins.zbar": {
+            "PACKAGE_NAME": "com.ionicframework.ionscanner230624uscan"
+        },
         "phonegap-plugin-barcodescanner": {
-            "PACKAGE_NAME": "com.ionicframework.ionscanner230624"
+            "PACKAGE_NAME": "com.ionicframework.ionscanner230624uscan"
         }
     },
     "dependent_plugins": {}

@@ -10,16 +10,13 @@ var sh = require('shelljs');
 var paths = {
   sass: ['./scss/**/*.scss']
 };
-var replace = require('replace');
-var replaceFiles = ['./www/js/controllers.js'];
 
 gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
-    .pipe(sass({
-      errLogToConsole: true
-    }))
+    .pipe(sass())
+    .on('error', sass.logError)
     .pipe(gulp.dest('./www/css/'))
     .pipe(minifyCss({
       keepSpecialComments: 0
@@ -51,42 +48,4 @@ gulp.task('git-check', function(done) {
     process.exit(1);
   }
   done();
-});
-gulp.task('add-proxy', function() {
-  return replace({
-    regex: "http://172.21.147.177:8000/list/event1",
-    replacement: "http://localhost:8100/list/event1",
-    paths: replaceFiles,
-    recursive: false,
-    silent: false,
-  });
-});
-
-gulp.task('remove-proxy', function() {
-  return replace({
-    regex: "http://localhost:8100/list/event1",
-    replacement: "http://172.21.147.177:8000/list/event1",
-    paths: replaceFiles,
-    recursive: false,
-    silent: false,
-  });
-});
-gulp.task('add-proxy', function() {
-  return replace({
-    regex: "http://172.21.147.177:8000/check/event1",
-    replacement: "http://localhost:8100/check/event1",
-    paths: replaceFiles,
-    recursive: false,
-    silent: false,
-  });
-});
-
-gulp.task('remove-proxy', function() {
-  return replace({
-    regex: "http://localhost:8100/check/event1",
-    replacement: "http://172.21.147.177:8000/check/event1",
-    paths: replaceFiles,
-    recursive: false,
-    silent: false,
-  });
 });
